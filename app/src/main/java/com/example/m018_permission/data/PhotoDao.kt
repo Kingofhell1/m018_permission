@@ -11,6 +11,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.RoomDatabase
+import androidx.versionedparcelable.ParcelField
 import kotlinx.coroutines.flow.Flow
 
 @Database(entities = [Photo::class], version = 1)

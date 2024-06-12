@@ -1,6 +1,7 @@
 package com.example.m018_permission.premission
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -71,7 +72,14 @@ class MainFragment : Fragment() {
 
     }
     private fun onItemClick(item: Photo){
-       findNavController().navigate(resId = R.id.action_photoFragment_to_mainCard)
+        val bundle = Bundle().apply{
+            putString(KEY_IMG, item.photoUri)
+        }
+       Log.d("Photo take", bundle.toString())
+       findNavController().navigate(resId = R.id.action_photoFragment_to_mainCard, args = bundle)
+    }
+    companion object{
+        const val KEY_IMG = "KEY_IMG"
     }
 
 
